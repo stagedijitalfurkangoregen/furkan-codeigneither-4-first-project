@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeigniter4/framework',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '3202335bb6a620d159d3b254a3d3ca14995cd447',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => true,
         ),
         'codeigniter4/framework' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '3202335bb6a620d159d3b254a3d3ca14995cd447',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -622,6 +622,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'twbs/bootstrap' => array(
+            'pretty_version' => 'v5.3.0',
+            'version' => '5.3.0.0',
+            'reference' => '60098ac499d30aa50575b0b7137391c06ef25429',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'twig/intl-extra' => array(
             'pretty_version' => 'v3.6.0',
             'version' => '3.6.0.0',
@@ -648,6 +657,12 @@
             'install_path' => __DIR__ . '/../twig/twig',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'twitter/bootstrap' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v5.3.0',
+            ),
         ),
     ),
 );

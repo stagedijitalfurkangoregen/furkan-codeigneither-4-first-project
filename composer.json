@@ -11,6 +11,7 @@
         "ext-mbstring": "*",
         "laminas/laminas-escaper": "^2.9",
         "psr/log": "^1.1",
+        "twbs/bootstrap": "^5.3",
         "twig/intl-extra": "^3.6",
         "twig/string-extra": "^3.6",
         "twig/twig": "^3.0"

@@ -47,7 +47,7 @@ public function index(){
     }
 
     $blogs["blogs"] = $this->blogModel->findAll();
-    return view('frontend/blog',$blogs);
+    return $this->twig->render('frontend/blog',$blogs);
 }
 
 
@@ -55,7 +55,8 @@ public function index(){
 
 
         $blog["blog"] = $this->blogModel->find($id);
-        return view('frontend/blog_detail',$blog);
+        return $this->twig->render('frontend/blog_detail',$blog);
+
     }
 
 

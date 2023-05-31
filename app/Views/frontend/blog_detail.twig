@@ -1,0 +1,33 @@
+{% include "frontend/header.twig" %}
+<div class="container"></div>
+<div class="container blogs">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex"><h1>Blog Düzenleme Sayfası</h1>
+                <form class="deletebutton" method = "post" action="{{ base_url("blogs") }}">
+                    <input name="blog_delete_id" type="hidden" value="{{ blog['blog_id'] }}">
+                    <button type="submit"><span class="material-symbols-outlined">
+delete
+</span></button>
+                </form></div>
+            <form class="form" method = "post" action="{{ base_url("blogs") }}">
+                <div>
+                    <input name="blog_edit_id" type="hidden" value="{{ blog['blog_id'] }}">
+                    <label for="">Blog Adı:</label>
+                    <div><input name="blog_edit_title" type="text" value="{{ blog['blog_title'] }}"></div>
+                </div>
+                <div style="margin-top: 1%;">
+                    <label for="">Blog Açıklaması:</label>
+                    <div><input name="blog_edit_description" type="text" value="{{ blog['blog_description'] }}"></div>
+                </div>
+
+                <button style="margin-top: 1%; margin-left: 0;" type="submit">Düzenle</button>
+            </form>
+
+        </div>
+        <div class="col-md-2" style="padding: 1% 0.9%;">
+        </div>
+    </div>
+
+</div>
+{% include "frontend/footer.twig" %}

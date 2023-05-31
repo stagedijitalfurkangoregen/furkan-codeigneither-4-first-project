@@ -98,7 +98,7 @@ class TwigExtensions extends AbstractExtension
      */
     public function asset_path($filename): string
     {
-        return base_url('public/assets'.'/' . $filename).'/';
+        return base_url('/assets'.'/' . $filename).'/';
     }
 
     public function upload_path($filename): string

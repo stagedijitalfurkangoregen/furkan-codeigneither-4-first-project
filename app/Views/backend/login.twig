@@ -1,10 +1,24 @@
+{% include "backend/header.twig" %}
 
-<h1>Login Sayfası</h1>
+<div class="container login">
+    <div class="row">
+        <div class="card " style="width: fit-content;">
+            <img class="stage" src="{{ asset_path('frontend') }}img/logo/stage_black_logo.svg" alt="">
 
-<form method = "post" action=""{{ base_url("management/login") }}">
-    <div><label for="">Kullanıcı Adı:</label></div>
-    <div><input name="user_name" type="text"></div>
-    <div><label for="">Kullanıcı Şifre:</label></div>
-    <div><input name="user_password" type="password"></div>
-    <div style="margin-top:1%;"><button type="submit">Giriş</button></div>
-</form>
+            <div class="card-body">
+                <form method = "post" action=""{{ base_url("management/login") }}">
+                    <div style="margin-top: 3%"><label for="">Kullanıcı Adı</label></div>
+                    <div><input name="user_name" type="text"></div>
+                    <div style="margin-top: 3%"><label for="">Kullanıcı Şifre</label></div>
+                    <div><input name="user_password" type="password"></div>
+                    <div style="margin-top:3%;"><button type="submit">Giriş</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% include "backend/footer.twig" %}

@@ -1,0 +1,93 @@
+body{
+    background:#000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    background: url('http://www.furkangoregen.net/images/signin-bg.jpg');
+}
+
+a{
+    background: #dd4814;
+    color: #fff;
+    padding: 5px;
+}
+
+
+ .material-symbols-outlined {
+     color: #000;
+     font-variation-settings:
+             'FILL' 0,
+             'wght' 400,
+             'GRAD' 0,
+             'opsz' 48
+ }
+
+.blogs{
+    padding: 1% 2% 2% 2%;
+    border-radius: 12px;
+    background: #fff;
+    color: #000;
+    margin-top: 5%;
+}
+
+
+.table tr{
+    margin-top: 2%!important;
+    color: #000;
+}
+
+
+
+.table{
+    border-collapse: collapse;
+}
+
+form{
+    margin: 2% auto;
+}
+
+button{
+    margin-left: 5px;
+    background: #dd4814;
+    color: #fff;
+    padding: 3px 10px;
+    border: none;
+}
+
+.login{
+    margin-top: 10%;
+    text-align: -webkit-center;
+
+}
+
+.stage{
+    fill: #fff;
+
+    width: 100%;
+}
+
+.card{
+
+    color: #1b1b1b;
+    padding: 10%;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+input, select, textarea{
+    color: #000;
+}
+.d-flex{
+    display: flex;
+}
+.deletebutton{
+    margin: 2.4% 0;
+    text-align: right;
+    padding: 0;
+    align-content: flex-start!important;
+}
+
+.deletebutton button{
+    background: transparent!important;
+}
+

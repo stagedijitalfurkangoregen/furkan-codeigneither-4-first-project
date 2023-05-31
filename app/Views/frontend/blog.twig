@@ -1,0 +1,31 @@
+{% include "frontend/header.twig" %}
+<div class="container blogs">
+    <h1 class="yeni">Blog Sayfası</h1>
+    <form method = "post" action="{{ base_url("blogs") }}">
+        <label for="">Blog Adı:</label>
+        <input name="blog_title" type="text">
+        <label class="mu-3" for="">Blog Açıklaması:</label>
+        <input name="blog_description" type="text">
+        <button type="submit">Ekle</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Blog Adı</th>
+            <th>Blog Açıklama</th>
+            <th>Düzenle</th>
+        </tr>
+
+        {% for blog in blogs %}
+            <tr class="mt-2">
+                <td>{{ blog['blog_title'] }}</td>
+                <td>{{ blog['blog_description'] }}</td>
+                <td><a href=" {{ base_url("blogs/"~blog['blog_id'])  }}">Düzenle</a></td>
+            </tr>
+
+        {% endfor %}
+</div>
+
+{% include "frontend/footer.twig" %}
+
+

@@ -39,7 +39,7 @@ class Auth extends BaseController
             return redirect()->to(base_url('management/login'));
         }
 
-        return $this->twig->render('backend/admin',[e]);
+        return $this->twig->render('backend/admin',[]);
     }
 
 
