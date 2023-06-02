@@ -15,19 +15,25 @@ class Blog extends BaseController
         $this->data =  [];
         $this->title =  null;
         $this->description =  null;
+        $this->file = null;
     }
 
 
 
-public function index(){
+    public function index(){
 
         if($this->request->getPost("blog_title")) {
         $this->title = $this->request->getPost("blog_title");
         $this->description = $this->request->getPost("blog_description");
-        $this->data =  [
-            "blog_title"=>$this->title,
-            "blog_description" =>$this->description,
-        ];
+        $this->file = $this->request->getFile("blog_image");
+        if ($this->file->isValid()) {
+            $this->data = [
+                "blog_title" => $this->title,
+                "blog_description" => $this->description,
+                "blog_image" => $this->file->getName(),
+            ];
+        }
+        $this->file->move('uploads/blogs');
         $this->blogModel->insert($this->data);
 
     }
@@ -35,10 +41,22 @@ public function index(){
     if($this->request->getPost("blog_edit_title")) {
         $this->title = $this->request->getPost("blog_edit_title");
         $this->description = $this->request->getPost("blog_edit_description");
-        $this->data =  [
-            "blog_title"=>$this->title,
-            "blog_description" =>$this->description,
-        ];
+        $this->file = $this->request->getFile("blog_edit_image");
+        if ($this->file->isValid()) {
+            $this->data = [
+                "blog_title" => $this->title,
+                "blog_description" => $this->description,
+                "blog_image" => $this->file->getName(),
+            ];
+            $this->file->move('uploads/blogs');
+        }
+        else{
+            $this->data = [
+                "blog_title" => $this->title,
+                "blog_description" => $this->description,
+            ];
+        }
+
         $this->blogModel->update($this->request->getPost("blog_edit_id"),$this->data);
 
     }
@@ -47,7 +65,7 @@ public function index(){
     }
 
     $blogs["blogs"] = $this->blogModel->findAll();
-    return $this->twig->render('frontend/blog',$blogs);
+    return $this->twig->render('backend/blogs/blog',$blogs);
 }
 
 
@@ -55,14 +73,8 @@ public function index(){
 
 
         $blog["blog"] = $this->blogModel->find($id);
-        return $this->twig->render('frontend/blog_detail',$blog);
+        return $this->twig->render('backend/blogs/blog_detail',$blog);
 
     }
-
-
-
-
-
-
 
 }

@@ -1,0 +1,36 @@
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
+<div class="container blogs">
+    <h1 class="yeni">Referans Sayfası</h1>
+    <form method = "post" enctype="multipart/form-data" action="{{ base_url("management/references") }}">
+        <label for="">Referans Adı:</label>
+        <input name="reference_title" type="text">
+        <label class="mu-3" for="">Referans Açıklaması:</label>
+        <input name="reference_description" type="text">
+        <label class="mu-3" for="">Referans Resmi:</label>
+        <input name="reference_image" type="file">
+        <button type="submit">Ekle</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Referans Adı</th>
+            <th>Referans Açıklama</th>
+            <th>Referans Resmi</th>
+            <th>Düzenle</th>
+        </tr>
+
+        {% for reference in references %}
+            <tr class="mt-2">
+                <td>{{ reference['reference_title'] }}</td>
+                <td>{{ reference['reference_description'] }}</td>
+                <td><img style="width: 10%" src="{{ upload_path("references/"~reference['reference_image']) }}" alt=""></td>
+                <td><a href=" {{ base_url("management/references/"~reference['reference_id'])  }}">Düzenle</a></td>
+            </tr>
+
+        {% endfor %}
+</div>
+
+{% include "backend/footer.twig" %}
+
+

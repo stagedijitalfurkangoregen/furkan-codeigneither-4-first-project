@@ -1,0 +1,38 @@
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
+<div class="container blogs">
+    <h1 class="yeni">Slider Sayfası</h1>
+    <form method = "post" enctype="multipart/form-data" action="{{ base_url("management/sliders") }}">
+        <label for="">Slider Adı:</label>
+        <input name="slider_title" type="text">
+        <label class="mu-3" for="">Slider Açıklaması:</label>
+        <input name="slider_description" type="text">
+        <div>
+            <label class="mu-3" for="">Slider Resmi:</label>
+            <input name="slider_image" type="file">
+        </div>
+        <button style="margin-top: 1%" type="submit">Ekle</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Slider Adı</th>
+            <th>Slider Açıklama</th>
+            <th>Slider Resmi</th>
+            <th>Düzenle</th>
+        </tr>
+
+        {% for slider in sliders %}
+            <tr class="mt-2">
+                <td>{{ slider['slider_title'] }}</td>
+                <td>{{ slider['slider_description'] }}</td>
+                <td><img style="width: 10%" src="{{ upload_path("sliders/"~slider['slider_image']) }}" alt=""></td>
+                <td><a href=" {{ base_url("management/sliders/"~slider['slider_id'])  }}">Düzenle</a></td>
+            </tr>
+
+        {% endfor %}
+</div>
+
+{% include "backend/footer.twig" %}
+
+

@@ -104,10 +104,10 @@ class TwigExtensions extends AbstractExtension
     public function upload_path($filename): string
     {
         if($filename){
-            return base_url('writable').'/'.$filename;
+            return base_url('uploads').'/'.$filename;
 //            return base_url('writable').'/'.$filename;
         }
-        return base_url('writable').DIRECTORY_SEPARATOR;
+        return base_url('uploads').DIRECTORY_SEPARATOR;
     }
     public function get_session($param)
     {

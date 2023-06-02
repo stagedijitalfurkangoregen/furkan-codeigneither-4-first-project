@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class BlogModel extends Model
 {
-    protected $table      = 'blog';
+    protected $table      = 'blogs';
     protected $primaryKey = 'blog_id';
 
     protected $useAutoIncrement = true;
@@ -14,7 +14,7 @@ class BlogModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['blog_title', 'blog_description'];
+    protected $allowedFields = ['blog_title', 'blog_description','blog_image'];
 
     // Dates
     protected $useTimestamps = false;

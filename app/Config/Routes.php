@@ -31,10 +31,20 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/category/(:num)', 'Home::category/$1');
-$routes->add('/blogs', 'Blog::index');
-$routes->get('blogs/(:num)', 'Blog::blog_details/$1');
-$routes->add('/management/login', 'Auth::index');
+$routes->add('/management/blogs', 'Blog::index');
+$routes->get('/management/blogs/(:num)', 'Blog::blog_details/$1');
+$routes->add('/management', 'Auth::index');
 $routes->add('/management/admin', 'Auth::admin');
+$routes->add('/management/references', 'References::index');
+$routes->get('/management/references/(:num)', 'References::reference_details/$1');
+$routes->add('/management/sliders', 'Sliders::index');
+$routes->get('/management/sliders/(:num)', 'Sliders::slider_details/$1');
+$routes->add('/management/pg_groups', 'ProjectGroups::index');
+$routes->get('/management/pg_groups/(:num)', 'ProjectGroups::pg_group_details/$1');
+$routes->add('/management/projects', 'Projects::index');
+$routes->get('/management/projects/(:num)', 'Projects::project_details/$1');
+$routes->add('/management/contacts', 'Contacts::index');
+$routes->get('/management/contacts/(:num)', 'Contacts::contact_details/$1');
 
 /*
  * --------------------------------------------------------------------

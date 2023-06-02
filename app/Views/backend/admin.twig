@@ -1,10 +1,8 @@
 {% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
 <div class="container">
     <h1>Admin Dashboard</h1>
-    <form method="post" action="{{ base_url("management/admin") }}">
-        <input name="value" value="value" type="hidden">
-        <button type="submit">Çıkış</button>
-    </form>
+
 </div>
 
 {% include "backend/footer.twig" %}

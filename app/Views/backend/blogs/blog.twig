@@ -1,11 +1,14 @@
-{% include "frontend/header.twig" %}
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
 <div class="container blogs">
     <h1 class="yeni">Blog Sayfası</h1>
-    <form method = "post" action="{{ base_url("blogs") }}">
+    <form method = "post" enctype="multipart/form-data" action="{{ base_url("management/blogs") }}">
         <label for="">Blog Adı:</label>
         <input name="blog_title" type="text">
         <label class="mu-3" for="">Blog Açıklaması:</label>
         <input name="blog_description" type="text">
+        <label class="mu-3" for="">Blog Resmi:</label>
+        <input name="blog_image" type="file">
         <button type="submit">Ekle</button>
     </form>
 
@@ -13,6 +16,7 @@
         <tr>
             <th>Blog Adı</th>
             <th>Blog Açıklama</th>
+            <th>Blog Resmi</th>
             <th>Düzenle</th>
         </tr>
 
@@ -20,12 +24,13 @@
             <tr class="mt-2">
                 <td>{{ blog['blog_title'] }}</td>
                 <td>{{ blog['blog_description'] }}</td>
-                <td><a href=" {{ base_url("blogs/"~blog['blog_id'])  }}">Düzenle</a></td>
+                <td><img style="width: 10%" src="{{ upload_path("blogs/"~blog['blog_image']) }}" alt=""></td>
+                <td><a href=" {{ base_url("management/blogs/"~blog['blog_id'])  }}">Düzenle</a></td>
             </tr>
 
         {% endfor %}
 </div>
 
-{% include "frontend/footer.twig" %}
+{% include "backend/footer.twig" %}
 
 

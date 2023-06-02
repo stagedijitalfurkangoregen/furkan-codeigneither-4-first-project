@@ -1,16 +1,17 @@
-{% include "frontend/header.twig" %}
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
 <div class="container"></div>
 <div class="container blogs">
     <div class="row">
         <div class="col-md-12">
             <div class="d-flex"><h1>Blog Düzenleme Sayfası</h1>
-                <form class="deletebutton" method = "post" action="{{ base_url("blogs") }}">
+                <form class="deletebutton" method = "post" action="{{ base_url("management/blogs") }}">
                     <input name="blog_delete_id" type="hidden" value="{{ blog['blog_id'] }}">
                     <button type="submit"><span class="material-symbols-outlined">
 delete
 </span></button>
                 </form></div>
-            <form class="form" method = "post" action="{{ base_url("blogs") }}">
+            <form class="form" enctype="multipart/form-data" method = "post" action="{{ base_url("management/blogs") }}">
                 <div>
                     <input name="blog_edit_id" type="hidden" value="{{ blog['blog_id'] }}">
                     <label for="">Blog Adı:</label>
@@ -19,6 +20,11 @@ delete
                 <div style="margin-top: 1%;">
                     <label for="">Blog Açıklaması:</label>
                     <div><input name="blog_edit_description" type="text" value="{{ blog['blog_description'] }}"></div>
+                </div>
+
+                <div style="margin-top: 1%;">
+                    <label for="">Blog Resmi:</label>
+                    <div><input name="blog_edit_image" type="file"></div>
                 </div>
 
                 <button style="margin-top: 1%; margin-left: 0;" type="submit">Düzenle</button>
@@ -30,4 +36,4 @@ delete
     </div>
 
 </div>
-{% include "frontend/footer.twig" %}
+{% include "backend/footer.twig" %}

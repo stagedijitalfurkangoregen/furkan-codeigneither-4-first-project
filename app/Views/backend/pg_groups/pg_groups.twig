@@ -1,0 +1,36 @@
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
+<div class="container blogs">
+    <h1 class="yeni">Proje Grubu Sayfası</h1>
+    <form method = "post" enctype="multipart/form-data" action="{{ base_url("management/pg_groups") }}">
+        <label for="">Proje Grubu Adı:</label>
+        <input name="pg_group_title" type="text">
+        <label class="mu-3" for="">Proje Grubu Açıklaması:</label>
+        <input name="pg_group_description" type="text">
+        <label class="mu-3" for="">Proje Grubu Resmi:</label>
+        <input name="pg_group_image" type="file">
+        <button type="submit">Ekle</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Proje Grubu Adı</th>
+            <th>Proje Grubu Açıklama</th>
+            <th>Proje Grubu Resmi</th>
+            <th>Düzenle</th>
+        </tr>
+
+        {% for pg in pg_groups %}
+            <tr class="mt-2">
+                <td>{{ pg['pg_group_title'] }}</td>
+                <td>{{ pg['pg_group_description'] }}</td>
+                <td><img style="width: 10%" src="{{ upload_path("pg_groups/"~pg['pg_group_image']) }}" alt=""></td>
+                <td><a href=" {{ base_url("management/pg_groups/"~pg['pg_group_id'])  }}">Düzenle</a></td>
+            </tr>
+
+        {% endfor %}
+</div>
+
+{% include "backend/footer.twig" %}
+
+

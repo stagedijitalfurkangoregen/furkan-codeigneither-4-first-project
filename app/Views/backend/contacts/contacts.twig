@@ -1,0 +1,76 @@
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
+<div class="container blogs">
+
+    <h1 class="yeni">İletişim Sayfası</h1>
+    <form method = "post" enctype="multipart/form-data" action="{{ base_url("management/contacts") }}">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <div><label for="">İletişim Adı:</label></div>
+                    <input name="contact_title" type="text">
+                </div>
+                <div>
+                    <div><label for="">İletişim Yetkilisi:</label></div>
+                    <input name="contact_admin" type="text">
+                </div>
+                <div>
+                    <div><label for="">İletişim Maili:</label></div>
+                    <input name="contact_mail" type="text">
+                </div>
+                <div>
+                    <div><label for="">İletişim Telefonu:</label></div>
+                    <input name="contact_phone" type="text">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <div>  <label for="">İletişim Cep Telefonu:</label></div>
+                    <input name="contact_mobile" type="text">
+                </div>
+                <div>
+                    <div><label for="">İletişim Adresi</label></div>
+                    <input name="contact_address" type="text">
+                </div>
+                <div>
+                    <div> <label for="">İletişim Konumu:</label></div>
+                    <input name="contact_map" type="text">
+                </div>
+                <div><button style="margin-top: 1%; float: right;" type="submit">Ekle</button></div>
+            </div>
+        </div>
+
+
+
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>İletişim Adı</th>
+            <th>İletişim Yetkilisi</th>
+            <th>İletişim Maili</th>
+            <th>İletişim Telefonu</th>
+            <th>İletişim Cep Telefonu</th>
+            <th>İletişim Adresi</th>
+
+            <th>Düzenle</th>
+        </tr>
+
+        {% for contact in contacts %}
+            <tr class="mt-2">
+                <td>{{ contact['contact_title'] }}</td>
+                <td>{{ contact['contact_admin'] }}</td>
+                <td>{{ contact['contact_mail'] }}</td>
+                <td>{{ contact['contact_phone'] }}</td>
+                <td>{{ contact['contact_mobile'] }}</td>
+                <td>{{ contact['contact_address'] }}</td>
+
+                <td><a href=" {{ base_url("management/contacts/"~contact['contact_id'])  }}">Düzenle</a></td>
+            </tr>
+
+        {% endfor %}
+</div>
+
+{% include "backend/footer.twig" %}
+
+

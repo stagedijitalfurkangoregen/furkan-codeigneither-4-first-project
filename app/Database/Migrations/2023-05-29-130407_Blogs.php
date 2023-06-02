@@ -20,6 +20,11 @@ class Blogs extends Migration
                 'constraint' => '100',
                 'null' => true,
             ],
+            'blog_image' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null' => true,
+            ],
             'blog_description' => [
                 'type' => 'TEXT',
                 'null' => true,
@@ -30,11 +35,11 @@ class Blogs extends Migration
 
         ]);
         $this->forge->addKey('blog_id', true);
-        $this->forge->createTable('blog');
+        $this->forge->createTable('blogs');
     }
 
     public function down()
     {
-        $this->forge->dropTable('blog');
+        $this->forge->dropTable('blogs');
     }
 }

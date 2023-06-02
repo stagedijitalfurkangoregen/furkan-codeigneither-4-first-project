@@ -1,0 +1,37 @@
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
+<div class="container blogs">
+    <h1 class="yeni">Proje Sayfası</h1>
+    <form method = "post" enctype="multipart/form-data" action="{{ base_url("management/projects") }}">
+        {{ form_open_multipart('upload/upload') }}
+        <label for="">Proje Adı:</label>
+        <input name="project_title" type="text">
+        <label class="mu-3" for="">Proje Açıklaması:</label>
+        <input name="project_description" type="text">
+        <label class="mu-3" for="">Proje Resmi:</label>
+        <input name="image" type="file">
+        <button type="submit">Ekle</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Proje Adı</th>
+            <th>Proje Açıklama</th>
+            <th>Proje Resmi</th>
+            <th>Düzenle</th>
+        </tr>
+
+        {% for project in projects %}
+            <tr class="mt-2">
+                <td>{{ project['project_title'] }}</td>
+                <td>{{ project['project_description'] }}</td>
+                <td><img style="width: 10%" src="{{ upload_path("projects/"~project['project_image']) }}" alt=""></td>
+                <td><a href=" {{ base_url("management/projects/"~project['project_id'])  }}">Düzenle</a></td>
+            </tr>
+
+        {% endfor %}
+</div>
+
+{% include "backend/footer.twig" %}
+
+

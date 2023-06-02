@@ -25,7 +25,7 @@ class Auth extends BaseController
             if($auth['user_password'] === $password){
                 $this->session->set('ykprOwSuperUser',$auth);
             }
-            return redirect()->to(base_url('management/admin'));
+            return redirect()->to(base_url('management/projects'));
 
         }
         return $this->twig->render('backend/login',$auth);
@@ -36,7 +36,7 @@ class Auth extends BaseController
 
         if($this->request->getPost("value")) {
             $this->session->remove('ykprOwSuperUser');
-            return redirect()->to(base_url('management/login'));
+            return redirect()->to(base_url('management'));
         }
 
         return $this->twig->render('backend/admin',[]);

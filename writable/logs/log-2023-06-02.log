@@ -1,0 +1,36 @@
+CRITICAL - 2023-06-02 07:53:01 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Projects.php on line 43.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Projects->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Projects))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 07:53:46 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Projects.php on line 43.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Projects->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Projects))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 07:54:18 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Projects.php on line 43.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Projects->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Projects))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 07:54:23 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Projects.php on line 43.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Projects->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Projects))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 07:58:52 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Sliders.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Sliders->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sliders))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 08:05:38 --> Call to a member function isValid() on null
+in APPPATH\Controllers\References.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\References->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\References))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

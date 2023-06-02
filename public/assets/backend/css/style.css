@@ -37,10 +37,41 @@ button{
 
 }
 
+.navbar-nav{
+    margin-top: 2%;
+    list-style: none;
+    width: inherit;
+    float: none;
+}
+
+.navbar-nav a{
+
+    font-weight: 600;
+    background: #fff;
+    color: #000;
+}
+
+.navbar-brand{
+
+    font-weight: 600;
+    background: #fff;
+    color: #000;
+}
+
+.navbar-nav li{
+    margin: 1% 1%;
+}
+
 .stage{
     fill: #fff;
 
     width: 100%;
+}
+
+.stageadmin{
+    fill: #fff;
+
+    width: 50%;
 }
 
 .card{
