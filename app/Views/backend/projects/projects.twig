@@ -8,6 +8,13 @@
         <input name="project_title" type="text">
         <label class="mu-3" for="">Proje Açıklaması:</label>
         <input name="project_description" type="text">
+        <label class="mu-3" for="">Proje Grubu:</label>
+        <select name="pg_group" >
+            <option value="0">Proje Grubu Seçin</option>
+            {% for pg in pggroups %}
+            <option value="{{ pg['pg_group_id'] }}">{{ pg['pg_group_title'] }}</option>
+            {% endfor %}
+        </select>
         <label class="mu-3" for="">Proje Resmi:</label>
         <input name="image" type="file">
         <button type="submit">Ekle</button>

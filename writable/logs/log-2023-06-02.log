@@ -50,3 +50,40 @@ in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
  4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\backend\ProjectGroups))
  5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 15:00:07 --> The original file is not a valid file.
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH\Controllers\backend\Projects.php(39): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/projects/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\backend\Projects->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\backend\Projects))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-02 15:07:34 --> mysqli_sql_exception: Column 'pg_group_id' cannot be null in C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\codeigniter4\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\codeigniter4\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\codeigniter4\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\codeigniter4\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\codeigniter4\app\Controllers\backend\Projects.php(40): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\codeigniter4\system\CodeIgniter.php(934): App\Controllers\backend\Projects->index()
+#9 C:\xampp\htdocs\codeigniter4\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\backend\Projects))
+#10 C:\xampp\htdocs\codeigniter4\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codeigniter4\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-06-02 15:07:34 --> Column 'pg_group_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `projects` (`project_title`, `project_description`, `pg_group_id`, `project_image`) VALUES (\'yeni proje43\', \'yeni açıklama\', NULL, \'persil.png\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `projects` (`project_title`, `project_description`, `pg_group_id`, `project_image`) VALUES (\'yeni proje43\', \'yeni açıklama\', NULL, \'persil.png\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `projects` (`project_title`, `project_description`, `pg_group_id`, `project_image`) VALUES (\'yeni proje43\', \'yeni açıklama\', NULL, \'persil.png\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `projects` (`project_title`, `project_description`, `pg_group_id`, `project_image`) VALUES (:project_title:, :project_description:, :pg_group_id:, :project_image:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\backend\Projects.php(40): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\backend\Projects->index()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\backend\Projects))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

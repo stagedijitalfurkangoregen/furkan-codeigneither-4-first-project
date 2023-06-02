@@ -13,7 +13,7 @@ class ProjectsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ["project_title","project_description","project_image"];
+    protected $allowedFields    = ["project_title","project_description","pg_group_id","project_image"];
 
     // Dates
     protected $useTimestamps = false;

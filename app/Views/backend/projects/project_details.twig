@@ -25,7 +25,20 @@ delete
                     <label for="">Proje Resmi:</label>
                     <div><input name="project_edit_image" type="file"></div>
                 </div>
-
+                <div style="margin-top: 1%;">
+                    <label for="">Proje Grubu:</label>
+                    <div>
+                        <select name="edit_pg_group" >
+                            {% for pg in pggroups %}
+                                {% if pg['pg_group_id'] == project['pg_group_id'] %}
+                                <option value="{{ pg['pg_group_id'] }}" selected>{{ pg['pg_group_title'] }} </option>
+                                {% else %}
+                                <option value="{{ pg['pg_group_id'] }}">{{ pg['pg_group_title'] }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
                 <button style="margin-top: 1%; margin-left: 0;" type="submit">Düzenle</button>
             </form>
 
