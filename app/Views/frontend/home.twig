@@ -1,0 +1,104 @@
+{% include "frontend/header.twig" %}
+{% include "frontend/navbar.twig" %}
+<div class="sliders">
+ <div class="owl-carousel owl-theme">
+  {% for slider in sliders %}
+   <div class="item" style="position: relative;">
+    <img style="height: 600px; filter: brightness(0.5); object-fit: cover;" src="{{ upload_path("sliders/"~slider['slider_image']) }}" alt="">
+    <div style="text-align:center;position:absolute; width: inherit; top:40%; left:30%;">
+     <div class="wow fadeInLeft" data-wow-duration="2s" ><span style="color: #fff; font-size: 24px;">{{slider['slider_title']}}<span></span></span></div>
+     <div class="wow fadeInRight" data-wow-duration="2s"><h1 style="color: #fff;">{{slider['slider_description']}}</h1></div>
+    </div>
+   </div>
+  {% endfor %}
+ </div>
+</div>
+<div class="project container-fluid">
+ <div class="row text-center">
+  <div class="wow fadeInLeft" data-wow-duration="2s"><h1>PROJELERİMİZ</h1></div>
+  <div class="wow fadeInRight" data-wow-duration="2s"><p>Doğa dostu prolerimiz ile tanışın!</p></div>
+ </div>
+ <div class="row details">
+  {% for project in projects %}
+  <div class=" col-md-4" >
+      <div class="card wow fadeInUp" data-wow-duration="2s" >
+          <img class="card-img-top" style="width:100%; height: 250px; object-fit: contain;" src="{{ upload_path("projects/"~project['project_image']) }}" alt="Card image cap">
+          <div class="card-body">
+              <h1 class="card-title">{{ project['project_title'] }}</h1>
+              <p class="card-text">{{ project['project_description'] }}</p>
+              <a href="#" class="">Projeye Git!</a>
+          </div>
+      </div>
+  </div>
+
+  {% endfor %}
+ </div>
+</div>
+<div class="blogs container-fluid">
+    <div class="row text-center wow fadeInUp" data-wow-duration="2s">
+        <div><h1>BİZDEN HABERLER</h1></div>
+        <div><p>En güncel haberlerimizi takip edin!</p></div>
+    </div>
+    <div class="row details text-center wow fadeInDown" data-wow-duration="2s" >
+        {% for blog in blogs %}
+            <div class="col-md-6">
+                <div><img style="height: 50%; object-fit: cover;width: -webkit-fill-available;" src="{{ upload_path("blogs/"~blog['blog_image']) }}" alt=""></div>
+                <div class="details"><h1>{{ blog['blog_title'] }}</h1></div>
+                <div><p>{{ blog['blog_description'] }}</p></div>
+                <div><a href="#">Habere Git!</a></div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="references  container">
+    <div class="row text-center wow fadeInLeft" data-wow-duration="2s">
+        <div><h1>REFERANSLARIMIZ</h1></div>
+        <div><p>Gücümüze güç katan değerler!</p></div>
+    </div>
+    <div class="row details text-center wow fadeInRight" data-wow-duration="2s">
+        <div class="owl-carousel owl-theme">
+            {% for reference in references %}
+                <div class="item" style="position: relative;">
+                    <img style="object-fit: cover;" src="{{ upload_path("references/"~reference['reference_image']) }}" alt="">
+                    {#                <div class="slider-items" style="text-align:center;position:absolute; width: inherit; top:40%; left:30%;">#}
+                    {#                    <div><span  style="color: rgb(255, 255, 255); font-size: 24px;">{{reference['reference_title']}}<span></span></span></div>#}
+                    {#                    <div><h1  style="color: rgb(255, 255, 255);">{{reference['reference_description']}}</h1></div>#}
+                    {#                </div>#}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container-fluid details">
+    {% for contact in contacts %}
+      <div class="row">
+            <div class="text-center">
+                <div>
+                    <span class="wow fadeInUp"  data-wow-duration="2s" style=" font-size:16px; font-weight: 400;">Randevu almak için</span>
+                </div>
+                <div class="w-10">
+                    <div><span class="wow fadeInDown"  data-wow-duration="2s" style="font-size: 52px; font-weight: 700;">{{ contact['contact_mobile'] }}</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="title mt-4 text-center">
+                    <h3 class="title wow fadeInRight" data-wow-delay=".5s" data-wow-duration="2s" style="">
+                        {{contact['contact_address']}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row details">
+            {{contact['contact_map']}}
+        </div>
+
+    {% endfor %}
+</div>
+
+
+
+{% include "frontend/footer.twig" %}

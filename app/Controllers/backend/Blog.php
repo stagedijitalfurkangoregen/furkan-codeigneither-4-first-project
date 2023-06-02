@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\backend;
 
 
 
+use App\Controllers\BaseController;
 use App\Models\BlogModel;
 
 class Blog extends BaseController
