@@ -4,28 +4,29 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Users extends Migration
+class SocialMedia extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'user_id' => [
+            'social_media_id' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'user_name' => [
+            'social_media_title' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'null' => true,
             ],
-            'user_password' => [
-                'type' => 'TEXT',
+            'social_media_url' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
                 'null' => true,
             ],
-            'user_auth' => [
-                'type' => 'INT',
+            'social_media_icon' => [
+                'type' => 'TEXT',
                 'null' => true,
             ],
             'created_at datetime default CURRENT_TIMESTAMP',
@@ -33,12 +34,12 @@ class Users extends Migration
             'deleted_at datetime',
 
         ]);
-        $this->forge->addKey('user_id', true);
-        $this->forge->createTable('users');
+        $this->forge->addKey('social_media_id', true);
+        $this->forge->createTable('socialmedias');
     }
 
     public function down()
     {
-        $this->forge->dropTable('users');
+        $this->forge->dropTable('socialmedias');
     }
 }

@@ -35,6 +35,7 @@ $routes->add('/management/blogs', 'backend\Blog::index');
 $routes->get('/management/blogs/(:num)', 'backend\Blog::blog_details/$1');
 $routes->add('/management', 'Auth::index');
 $routes->add('/management/admin', 'Auth::admin');
+$routes->add('/management/users/(:num)', 'Auth::admin_details/$1');
 $routes->add('/management/references', 'backend\References::index');
 $routes->get('/management/references/(:num)', 'backend\References::reference_details/$1');
 $routes->add('/management/sliders', 'backend\Sliders::index');
@@ -45,6 +46,8 @@ $routes->add('/management/projects', 'backend\Projects::index');
 $routes->get('/management/projects/(:num)', 'backend\Projects::project_details/$1');
 $routes->add('/management/contacts', 'backend\Contacts::index');
 $routes->get('/management/contacts/(:num)', 'backend\Contacts::contact_details/$1');
+$routes->add('/management/sm', 'backend\SocialMedias::index');
+$routes->get('/management/sm/(:num)', 'backend\SocialMedias::social_media_details/$1');
 
 /*
  * --------------------------------------------------------------------

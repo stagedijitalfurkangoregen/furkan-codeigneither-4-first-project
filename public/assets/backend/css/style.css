@@ -3,6 +3,20 @@ body{
     color: #000;
     font-family: 'Montserrat', sans-serif;
 }
+.details{
+    margin-top: 15px;
+}
+.nav-tabs a {
+    background: transparent;
+    color: #000;
+    padding: 5px;
+}
+
+.nav-tabs .active{
+    background: #dd4814;
+    color: #fff;
+    padding: 5px;
+}
 
 a{
     background: #dd4814;
@@ -42,6 +56,9 @@ button{
     list-style: none;
     width: inherit;
     float: none;
+}
+.bg-light{
+    background: #fff!important;
 }
 
 .navbar-nav a{

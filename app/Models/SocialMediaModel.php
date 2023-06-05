@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UsersModel extends Model
+class SocialMediaModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
-    protected $primaryKey       = 'user_id';
+    protected $table            = 'socialmedias';
+    protected $primaryKey       = 'social_media_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['user_name','user_password','user_auth'];
+    protected $allowedFields    = ["social_media_title","social_media_url","social_media_icon"];
 
     // Dates
     protected $useTimestamps = false;

@@ -1,7 +1,93 @@
 {% include "backend/header.twig" %}
 {% include "backend/navbar.twig" %}
 <div class="container">
-    <h1>Admin Dashboard</h1>
+    <div class=" details">
+        <div><p><b>Stage Digital Admin Paneli</b></p></div>
+
+        <div><h1 style="margin-top: -10px;">Hoşgeldin {{ admin["user_name"] }}!</h1></div>
+        {% if admin['user_auth'] == 1 %}
+            <p>Admin</p>
+        {% elseif admin['user_auth'] == 2 %}
+            <p>İçerik Üretici</p>
+        {% else %}
+            <p>Süper Admin</p>
+        {% endif %}
+    </div>
+
+    <ul class="nav nav-tabs details">
+        <li><a data-toggle="tab" href="#home">Düzenle</a></li>
+        {% if admin["user_auth"] == 0 %}
+        <li><a data-toggle="tab" href="#menu1">Kullanıcı Listesi</a></li>
+        <li><a data-toggle="tab" href="#menu2">Kullanıcı Ekle</a></li>
+        {% endif %}
+    </ul>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <form class="form" method = "post" enctype="multipart/form-data"  action="{{ base_url("management/admin") }}">
+                <div>
+                    <input name="admin_edit_id" type="hidden" value="{{ admin["user_id"] }}">
+                    <label for="">Kullanıcı Adı:</label>
+                    <div><input name="admin_edit_name" type="text" value="{{ admin["user_name"] }}"></div>
+                </div>
+                <div style="margin-top: 1%;">
+                    <label for="">Kullanıcı Parolası:</label>
+                    <div><input name="admin_edit_pass" type="password" value="{{ admin["user_password"] }}"></div>
+                </div>
+
+                <button style="margin-top: 1%; margin-left: 0;" type="submit">Düzenle</button>
+            </form>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <table class="table details">
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Kullanıcı Yetki</th>
+                    <th>Düzenle</th>
+                </tr>
+
+                {% for user in users %}
+                    <tr class="mt-2">
+                        <td>{{ user['user_name'] }}</td>
+                        <td>
+                            {% if user['user_auth'] == 1 %}
+                                Admin
+                            {% else %}
+                                İçerik Üretici
+                            {% endif %}
+                        </td>
+                        <td><a href=" {{ base_url("management/users/"~user['user_id'])  }}">Düzenle</a></td>
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <div class="details"><h3>Yeni Kullanıcı</h3></div>
+            <hr>
+            <form class="form" method = "post" enctype="multipart/form-data"  action="{{ base_url("management/admin") }}">
+                <div>
+                    <label for="">Kullanıcı Adı:</label>
+                    <div><input name="user_name" type="text" value=""></div>
+                </div>
+                <div style="margin-top: 1%;">
+                    <label for="">Kullanıcı Parolası:</label>
+                    <div><input name="user_pass" type="password" value=""></div>
+                </div>
+                <div style="margin-top: 1%;">
+                    <label for="">Kullanıcı Yetkisi:</label>
+                    <div>
+                        <select name="user_auth" >
+                                <option value="0">Yetki Seçiniz...</option>
+                                <option value="1">Admin</option>
+                                <option value="2">İçerik Üreticisi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button style="margin-top: 1%; margin-left: 0;" type="submit">Ekle</button>
+            </form>
+        </div>
+    </div>
 
 </div>
 

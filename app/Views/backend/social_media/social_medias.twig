@@ -1,0 +1,38 @@
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
+<div class="container blogs">
+    <h1 class="yeni">Sosyal Medya Sayfası</h1>
+    <form method = "post" enctype="multipart/form-data" action="{{ base_url("management/sm") }}">
+        <label for="">Sosyal Medya:</label>
+        <input name="social_media_title" type="text">
+        <label class="mu-3" for="">Sosyal Medya URL:</label>
+        <input name="social_media_url" type="text">
+        <div>
+            <label class="mu-3" for="">Sosyal Medya Icon:</label>
+            <input name="social_media_icon" type="file">
+        </div>
+        <button style="margin-top: 1%" type="submit">Ekle</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Sosyal Medya</th>
+            <th>Sosyal Medya URL</th>
+            <th>Sosyal Medya Icon</th>
+            <th>Düzenle</th>
+        </tr>
+
+        {% for sm in socialmedias %}
+            <tr class="mt-2">
+                <td>{{ sm['social_media_title'] }}</td>
+                <td>{{ sm['social_media_url'] }}</td>
+                <td><img style="width: 10%" src="{{ upload_path("socialmedias/"~sm['social_media_icon']) }}" alt=""></td>
+                <td><a href=" {{ base_url("management/sm/"~sm['social_media_id'])  }}">Düzenle</a></td>
+            </tr>
+
+        {% endfor %}
+</div>
+
+{% include "backend/footer.twig" %}
+
+

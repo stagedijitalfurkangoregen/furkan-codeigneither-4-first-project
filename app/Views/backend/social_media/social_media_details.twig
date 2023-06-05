@@ -1,0 +1,38 @@
+{% include "backend/header.twig" %}
+{% include "backend/navbar.twig" %}
+<div class="container"></div>
+<div class="container blogs">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex"><h1>Sosyal Medya Düzenleme Sayfası</h1>
+                <form class="deletebutton" method = "post" action="{{ base_url("management/sm") }}">
+                    <input name="social_media_delete_id" type="hidden" value="{{ socialmedia['social_media_id'] }}">
+                    <button type="submit"><span class="material-symbols-outlined">
+delete
+</span></button>
+                </form></div>
+            <form class="form" method = "post" enctype="multipart/form-data"  action="{{ base_url("management/sm") }}">
+                <div>
+                    <input name="social_media_edit_id" type="hidden" value="{{ socialmedia['social_media_id'] }}">
+                    <label for="">Sosyal Medya:</label>
+                    <div><input name="social_media_edit_title" type="text" value="{{ socialmedia['social_media_title'] }}"></div>
+                </div>
+                <div style="margin-top: 1%;">
+                    <label for="">Sosyal Medya Açıklaması:</label>
+                    <div><input name="social_media_edit_url" type="text" value="{{ socialmedia['social_media_url'] }}"></div>
+                </div>
+                <div style="margin-top: 1%;">
+                    <label for="">Sosyal Medya İcon:</label>
+                    <div><input name="social_media_edit_icon" type="file"></div>
+                </div>
+
+                <button style="margin-top: 1%; margin-left: 0;" type="submit">Düzenle</button>
+            </form>
+
+        </div>
+        <div class="col-md-2" style="padding: 1% 0.9%;">
+        </div>
+    </div>
+
+</div>
+{% include "backend/footer.twig" %}
